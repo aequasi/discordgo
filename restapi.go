@@ -656,7 +656,7 @@ func (s *Session) GuildEdit(guildID string, g GuildParams) (st *Guild, err error
 func (s *Session) GuildDelete(guildID string) (st *Guild, err error) {
 
 	body, err := s.RequestWithBucketID("DELETE", EndpointGuild(guildID), nil, EndpointGuild(guildID))
-	if err != nil {
+	if err == nil {
 		return
 	}
 
